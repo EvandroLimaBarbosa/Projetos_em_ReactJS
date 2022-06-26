@@ -16,7 +16,7 @@ button:hover {
     display: flex;
     align-items:flex-end;
     justify-content: right;
-    padding: .5em;
+    padding: 0 .5em .5em .5em;
     font-size: 3em;
     font-weight: 400;
     margin: 0;
@@ -25,4 +25,15 @@ button:hover {
 
 .botao {
     display: inline-block;
+}
+
+.container_calculo_aqui {
+    color: rgb(161, 161, 161);
+    display: flex;
+    align-items:flex-end;
+    justify-content: right;
+    padding: .8em 1.3em 0 1.3em;
+    font-size: 1.5em;
+    font-weight: 100;
+    word-break: break-word;
 }
