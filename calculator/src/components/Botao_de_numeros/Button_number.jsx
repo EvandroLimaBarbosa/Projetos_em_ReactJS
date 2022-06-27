@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Button_number.css";
 
 export default function Button_number({ carac, estilo, evento}) {
