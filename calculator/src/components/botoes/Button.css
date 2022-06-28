@@ -14,3 +14,16 @@
 .container_botao_igual {
     background-color: darkblue;
 }
+
+.number {
+    background: rgb(0, 0, 0);    
+    font-weight: 300;
+    width: 3em;
+    height: 3em;     
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: none;
+    margin: 0.07em;
+    line-height: 0em;
+}
