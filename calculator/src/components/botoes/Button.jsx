@@ -1,18 +1,21 @@
 import "./Button.css";
 
-export default function Button({ carac, estilo, value, teste}) {
-  
-  return (
-    <div className="botao">
-      {value === "numero" ? (
-        <button onClick={teste} style={estilo} className="number">
-          {carac}
+  const Button = ({ estilo, value, onClick, carac }) => {
+    
+    return (
+      <div className="botao">
+      {carac === "numero" ? (
+        <button value={value} onClick={onClick} style={estilo} className="number">
+          {value}
         </button>
       ) : (
-        <button onClick={teste} style={estilo} className="simbol">
-          {carac}
+        <button value={value} onClick={onClick} style={estilo} className="simbol">
+          {value}
         </button>
       )}
     </div>
   );
-}
+  };
+  
+export default Button;
+
