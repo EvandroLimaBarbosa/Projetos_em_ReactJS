@@ -48,18 +48,19 @@ export default function Calculator({}) {
       .replace("÷", "/");
     if (apertouNoSimbolo === 0) {
       setCalc(`${num} ${carac}`);
-      // console.log("primeiro");
+      console.log("primeiro");
       setSimboloAnterior(carac);
     } else if (!trava && simboloAnterior === "") {
       setNum(eval(calculoFinal));
       setCalc(`${eval(calculoFinal)} ${carac}`);
-      // console.log("segundo");
+      console.log("segundo");
       setTrava(true);
       setSimboloAnterior(carac);
     } else if (!trava && simboloAnterior !== "") {
       setNum(eval(calculoFinal));
       setCalc(`${eval(calculoFinal)} ${carac}`);
-      // console.log("terceiro");
+      console.log("terceiro");
+      setSimboloAnterior(carac);
       setTrava(true);
     } else {
       setCalc(calc.substring(0, calc.length - 1) + carac);
@@ -84,14 +85,14 @@ export default function Calculator({}) {
     setNum(eval(txtcalculoFinal));
     setinsertDepoisDoSimbolo(false);
 
-    //   console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
-    //   console.log(`
-    // resultadinho: ${calculoFinal}
-    // res: ${simbol}
-    // oldnum: ${oldNum}
-    // num: ${num}
-    // apertouSimbolo: ${apertouNoSimbolo}
-    // insertDepoisdoSimbolo: ${insertDepoisDoSimbolo} `);
+    console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
+    console.log(`
+     resultadinho: ${calculoFinal}
+     res: ${simbol}
+     oldnum: ${oldNum}
+     num: ${num}
+     apertouSimbolo: ${apertouNoSimbolo}
+     insertDepoisdoSimbolo: ${insertDepoisDoSimbolo} `);
   }
 
   const porcentagem = () => {
