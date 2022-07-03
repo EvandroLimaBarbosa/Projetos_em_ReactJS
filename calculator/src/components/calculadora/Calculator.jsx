@@ -26,40 +26,40 @@ export default function Calculator({}) {
       console.log("não da mais");
     } else if (num === 0 && apertouNoSimbolo === 0) {
       setNum(res);
-      console.log("primeira função do insert");
+      // console.log("primeira função do insert");
     } else if (apertouNoSimbolo >= 1 && !insertDepoisDoSimbolo) {
       setOldNum(num);
       setNum(res);
       setinsertDepoisDoSimbolo(true);
-      console.log("segunda função do insert");
+      // console.log("segunda função do insert");
     } else if (insertDepoisDoSimbolo) {
       setNum(`${num}${res}`);
-      console.log("terceira função do insert função do insert");
+      // console.log("terceira função do insert função do insert");
     } else {
       setNum(`${num}${res}`);
-      console.log("quarta função do insert");
+      // console.log("quarta função do insert");
     }
   };
 
   function insertsimbolo(carac) {
-    console.log("simbolo anterior: " + simboloAnterior);
+    // console.log("simbolo anterior: " + simboloAnterior);
     var calculoFinal = `${num} ${simboloAnterior} ${oldNum}`
       .replace("x", "*")
       .replace("÷", "/");
     if (apertouNoSimbolo === 0) {
       setCalc(`${num} ${carac}`);
-      console.log("primeiro");
+      // console.log("primeiro");
       setSimboloAnterior(carac);
     } else if (!trava && simboloAnterior === "") {
       setNum(eval(calculoFinal));
       setCalc(`${eval(calculoFinal)} ${carac}`);
-      console.log("segundo");
+      // console.log("segundo");
       setTrava(true);
       setSimboloAnterior(carac);
     } else if (!trava && simboloAnterior !== "") {
       setNum(eval(calculoFinal));
       setCalc(`${eval(calculoFinal)} ${carac}`);
-      console.log("terceiro");
+      // console.log("terceiro");
       setTrava(true);
     } else {
       setCalc(calc.substring(0, calc.length - 1) + carac);
@@ -75,7 +75,7 @@ export default function Calculator({}) {
       : setNum(num.substring(0, num.length - 1));
   }
 
-  const calcular = () => {
+  function calcular() {
     if (trava) {
     }
     var calculoFinal = `${oldNum} ${simbol} ${num}`;
@@ -84,16 +84,15 @@ export default function Calculator({}) {
     setNum(eval(txtcalculoFinal));
     setinsertDepoisDoSimbolo(false);
 
-  //   console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
-  //   console.log(`
-  // resultadinho: ${calculoFinal}
-  // res: ${simbol}
-  // oldnum: ${oldNum}
-  // num: ${num}
-  // apertouSimbolo: ${apertouNoSimbolo}
-  // insertDepoisdoSimbolo: ${insertDepoisDoSimbolo} `);
-   
-  };
+    //   console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
+    //   console.log(`
+    // resultadinho: ${calculoFinal}
+    // res: ${simbol}
+    // oldnum: ${oldNum}
+    // num: ${num}
+    // apertouSimbolo: ${apertouNoSimbolo}
+    // insertDepoisdoSimbolo: ${insertDepoisDoSimbolo} `);
+  }
 
   const porcentagem = () => {
     setNum(num / 100);
