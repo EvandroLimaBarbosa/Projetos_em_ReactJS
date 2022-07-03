@@ -12,6 +12,12 @@ export default function Calculator({}) {
   const [trava, setTrava] = useState(false);
   const [simboloAnterior, setSimboloAnterior] = useState("");
 
+  function ajeitarTexto(txt){
+    return txt
+    .replace("x", "*")
+    .replace("÷", "/");
+  }
+
   const limpar = () => {
     setCalc(0);
     setNum(0);
@@ -43,9 +49,7 @@ export default function Calculator({}) {
 
   function insertsimbolo(carac) {
     // console.log("simbolo anterior: " + simboloAnterior);
-    var calculoFinal = `${num} ${simboloAnterior} ${oldNum}`
-      .replace("x", "*")
-      .replace("÷", "/");
+    var calculoFinal = ajeitarTexto(`${num} ${simboloAnterior} ${oldNum}`)
     if (apertouNoSimbolo === 0) {
       setCalc(`${num} ${carac}`);
       console.log("primeiro");
@@ -63,7 +67,7 @@ export default function Calculator({}) {
       setSimboloAnterior(carac);
       setTrava(true);
     } else {
-      setCalc(calc.substring(0, calc.length - 1) + carac);
+      setCalc(`${num} ${carac}`);
     }
     setinsertDepoisDoSimbolo(false);
     setApertouNoSimbolo(apertouNoSimbolo + 1);
@@ -77,13 +81,13 @@ export default function Calculator({}) {
   }
 
   function calcular() {
-    if (trava) {
-    }
     var calculoFinal = `${oldNum} ${simbol} ${num}`;
-    var txtcalculoFinal = calculoFinal.replace("x", "*").replace("÷", "/");
+    var txtcalculoFinal = ajeitarTexto(calculoFinal)
     setCalc(`${calculoFinal} =`);
     setNum(eval(txtcalculoFinal));
     setinsertDepoisDoSimbolo(false);
+    setTrava(true)
+    setOldNum(eval(txtcalculoFinal))
 
     console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
     console.log(`
