@@ -4,83 +4,86 @@ import Button from "../botoes/Button";
 
 export default function Calculator({}) {
   const [num, setNum] = useState(0);
+  const [oldNum, setOldNum] = useState(0);
+  const [simbol, setSimbol] = useState(0);
   const [calc, setCalc] = useState(0);
+  const [apertouNoSimbolo, setApertouNoSimbolo] = useState(0);
+  const [insertDepoisDoSimbolo, setinsertDepoisDoSimbolo] = useState(false);
+  const [trava, setTrava] = useState(false);
 
   const limpar = () => {
-    setNum("0");
-    setCalc(" ");
-  }
+    setCalc(0);
+    setNum(0);
+    setApertouNoSimbolo(0);
+    setOldNum(0);
+    setinsertDepoisDoSimbolo(false);
+  };
 
-  var iniciou = 0;
-  var trava = 0;
-  var reset = 0;
-
-  function insert(res) {
-    console.log(reset);
-    console.log(trava);
-    if (reset == 1) {
+  const insert = (res) => {
+    setTrava(false)
+    if (num.length >= 10) {
+      console.log("não da mais");
+    } else if (num === 0 && apertouNoSimbolo === 0) {
       setNum(res);
-      setCalc(" ");
-      reset = 0;
-    } 
-    else if (calc != " ") {
-      console.log(trava);
-      if (trava == 0) {
-        setNum(res);
-        trava = 1;
-      } else {
-        setNum(`${num}${res}`);
-      }
+      console.log("primeira função do insert");
+    } else if (apertouNoSimbolo >= 1 && !insertDepoisDoSimbolo) {
+      setOldNum(num);
+      setNum(res);
+      setinsertDepoisDoSimbolo(true);
+      console.log("segunda função do insert");
+    } else if (insertDepoisDoSimbolo) {
+      setNum(`${num}${res}`);
+      console.log("terceira função do insert função do insert");
     } else {
-      if (num == "0") {
-        setNum(res);
-      } else {
-        setNum(`${num}${res}`);
-      }
+      setNum(`${num}${res}`);
+      console.log("quarta função do insert");
     }
-  }
+  };
 
   function insertsimbolo(res) {
-    console.log("valor do resultado:" + num);
-    console.log("valor do calculo:" + calc);
-    if (iniciou == 0) {
-      if (reset == 1) {
-        setCalc(`${num} ${res} `);
-        reset = 0;
-      } else {
-        setCalc(`${num} ${res} `);
-        trava = 0;
-      }
-      iniciou = 1
-    } else {
-      if (reset == 1) {
-        setCalc(`${res} ${num} `);
-        reset = 0;
-      } else {
-        setCalc(`${calc} ${res} ${num}`);
-        trava = 0;
-      }
-    }
+    console.log("old num: " + oldNum);
+    if (apertouNoSimbolo === 0) {
+      setCalc(`${num} ${res}`);
+      console.log("primeiro");
+    } else if (!trava){
+      var calculoFinal = `${num} ${res} ${oldNum}`.replace('x','*').replace('÷','/')
+      setNum(eval(calculoFinal));
+      setCalc(`${eval(calculoFinal)} ${res}`);
+      console.log("segundo");
+      setTrava(true)
+    } 
+    setinsertDepoisDoSimbolo(false);
+    setApertouNoSimbolo(apertouNoSimbolo + 1);
+    setSimbol(res);
   }
 
   function apagar() {
-    if (num.length == "1") {
-      setNum(0);
-    } else {
-      setNum(num.substring(0, num.length - 1));
-    }
+    num.length <= 1 || num === 0
+      ? setNum(0)
+      : setNum(num.substring(0, num.length - 1));
   }
 
-  function calcular() {
-    setCalc(`${num} ${calc} `);
-    var valorfinal = calc;
-    setNum(eval(valorfinal));
-    console.log(valorfinal);
+  const calcular = () => {
+    if(trava){}
+    var calculoFinal = (`${num} ${simbol} ${oldNum}`);
+    var txtcalculoFinal = calculoFinal.replace('x','*').replace('÷','/')
+    setCalc(`${calculoFinal} =`);
+    setNum(eval(txtcalculoFinal))
+    console.log(`QTD SIMBOLO ${apertouNoSimbolo}`);
+    console.log(`
+  resultadinho: ${calculoFinal}
+  res: ${simbol}
+  oldnum: ${oldNum}
+  num: ${num}
+  apertouSimbolo: ${apertouNoSimbolo}
+  insertDepoisdoSimbolo: ${insertDepoisDoSimbolo} `);
+  
+  };
 
-    setCalc(`${calc}  =`);
-
-    reset = 1;
-  }
+  const porcentagem = () => {
+    setNum(num / 100);
+    console.log("vrau");
+  };
 
   return (
     <div>
@@ -93,7 +96,7 @@ export default function Calculator({}) {
         <Button
           value="%"
           onClick={() => {
-            insertsimbolo("%");
+            porcentagem();
           }}
           carac="simbolo"
         />
