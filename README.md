@@ -2,5 +2,5 @@
 
 [Acessar Calculadora](https://projetos-em-react-js.vercel.app/)
 
-![Calculator](https://user-images.githubusercontent.com/96010876/177065932-5cee1aef-a237-4694-91dc-f3911763de5e.png)
 
+![Calculator](https://user-images.githubusercontent.com/96010876/177066041-fd5f0005-cd16-4671-b739-a0b6b214504c.png)
