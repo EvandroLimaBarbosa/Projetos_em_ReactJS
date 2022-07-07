@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Frase() {
   return (
-    <div>Frase</div>
+    <div>Este é um componente de Frase</div>
   )
 }

@@ -1,11 +1,11 @@
-function HelloWorld (){
+import Frase from "./Frase";
 
-    return (
-        <div>
-            <h1>Meu primeiro Componente</h1>
-        </div>
-    )
-
+function HelloWorld() {
+  return (
+    <div>
+      <h1>Meu primeiro Componente</h1>
+    </div>
+  );
 }
 
-export default HelloWorld
+export default HelloWorld;
