@@ -1,6 +1,4 @@
 body{
-  display: flex;
-  flex-direction: row;
   background: gray;
-  padding: 5em;
+  padding: 2em;
 }
