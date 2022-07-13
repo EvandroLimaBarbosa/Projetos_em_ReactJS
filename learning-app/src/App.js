@@ -1,11 +1,18 @@
 import "./App.css";
 import Pessoa from "./components/Pessoa";
 import List from "./components/list";
+import Evento from "./components/Evento";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div className="ContainerGeral">
+      <Form/>
+      <Evento numero={1}/>
+      <Evento numero={2}/>
+      <Evento numero={3}/>
       <div className="ContainerApp">
+
         <Pessoa
           nome="Evandro"
           idade="22"
