@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Evento({numero}) {
     function meuEvento() {
-        console.log(`Opa, Fui ativado! ${numero}`)
+        console.log(`Opa, você apertou o numero ${numero}`)
     }
 
   return (

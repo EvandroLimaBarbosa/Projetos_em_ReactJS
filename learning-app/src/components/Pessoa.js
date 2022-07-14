@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Pessoa.module.css";
+import PropTypes from 'prop-types'
 
 export default function Pessoa({ foto, nome, profissao, idade }) {
   return (
@@ -10,4 +11,12 @@ export default function Pessoa({ foto, nome, profissao, idade }) {
         <p className={styles.ParagrafoPessoa}>Profissão: {profissao}</p>
     </div>
   );
+}
+
+
+Pessoa.defaultProps = {
+  nome: 'Indefinido',
+  idade: 0,
+  foto: 'https://www.ecp.org.br/wp-content/uploads/2017/12/default-avatar-1.png',
+  profissao: 'Indefinida'
 }
