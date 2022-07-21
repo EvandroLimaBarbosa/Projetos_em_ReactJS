@@ -3,17 +3,20 @@ import Pessoa from "./components/Pessoa";
 import List from "./components/list";
 import Evento from "./components/Evento";
 import Form from "./components/Form";
+import Condicional from "./components/Condicional";
 
 function App() {
   return (
     <div className="ContainerGeral">
       <div className="ContainerList">
+        <h1>Renderização Condicional</h1>
+        <Condicional/>
+      </div>
+      <div className="ContainerList">
         <Form />
       </div>
       <div style={{display: 'flex', justifyContent:'space-around',margin: '2em auto' , padding:'1em' ,backgroundColor: "white", width: "17em", minHeight: "1em"}}>
         <Evento numero={1} />
-        <Evento numero={2} />
-        <Evento numero={3} />
       </div>
       <div className="ContainerApp">
         <Pessoa
