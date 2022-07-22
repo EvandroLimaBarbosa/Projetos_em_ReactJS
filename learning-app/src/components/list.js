@@ -3,7 +3,7 @@ import Item from './item'
 
 export default function List() {
   return (
-    <>
+    <div className="ContainerList">
         <h1>Minha Lista</h1>
         <ul>
             <Item marca={"Renault"} ano_lancamento={1899}/>
@@ -12,6 +12,6 @@ export default function List() {
             <Item marca={"Volkswagen"} ano_lancamento={1937}/>
             <Item />
         </ul>
-    </>
+    </div>
   )
 }

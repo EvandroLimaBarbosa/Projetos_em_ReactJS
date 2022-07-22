@@ -12,7 +12,7 @@ export default function Form() {
     const [senha, setSenha] = useState()
 
   return (
-    <div>
+    <div className="ContainerList">
       <h1>Meu cadastro:</h1>
         <form onSubmit={cadastrarUsuario}>
           <div>
