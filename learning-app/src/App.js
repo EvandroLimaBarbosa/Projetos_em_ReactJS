@@ -4,11 +4,13 @@ import List from "./components/list";
 import Evento from "./components/Evento";
 import Form from "./components/Form";
 import Condicional from "./components/Condicional";
-import RenderList from "./components/RenderList";
+import RenderList from "./components/childs/RenderList";
+import ListaManual from "./components/StateLift/StateLift";
 
 function App() {
   return (
     <div className="ContainerGeral">
+      <ListaManual/>
       <RenderList/>
 
 

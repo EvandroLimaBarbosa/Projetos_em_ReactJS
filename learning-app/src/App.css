@@ -33,3 +33,7 @@ p {
   width: 60vw;
   background: gray;
 }
+
+input {
+  margin: auto;
+}

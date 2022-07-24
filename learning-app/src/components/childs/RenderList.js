@@ -1,5 +1,5 @@
 import React from "react";
-import OutraLista from "./childs/OutraLista";
+import OutraLista from "./OutraLista";
 
 export default function RenderList() {
   const meusItens = ["React", "Vue", "Angular"];
