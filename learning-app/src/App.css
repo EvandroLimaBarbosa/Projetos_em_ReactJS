@@ -22,6 +22,7 @@
   border-radius: 0.5em;
   border: 0.05em solid rgba(0, 0, 0, 0.45);
   padding: 1em;
+  
 }
 
 .ContainerList > h1 {
@@ -34,3 +35,4 @@ p {
   width: 60vw;
   background: gray;
 }
+

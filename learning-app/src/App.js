@@ -6,11 +6,31 @@ import Form from "./components/Form";
 import Condicional from "./components/Condicional";
 import RenderList from "./components/childs/RenderList";
 import ListaManual from "./components/StateLift/StateLift";
+import { BrowserRouter as Router, Route, Routes, Link, Switch } from 'react-router-dom'
+import Home from "./pages/Home";
+import Empresa from "./pages/Empresa";
+import Contato from "./pages/Contato";
+import NavBar from "./components/navBar/NavBar";
 
 function App() {
   return (
     <div className="ContainerGeral">
-      <ListaManual/>
+      <Router>
+        <NavBar/>
+        <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
+          <Route path="/Empresa">
+            <Empresa/>
+          </Route>
+          <Route path="/Contato">
+            <Contato/>
+          </Route>
+        </Switch>
+      </Router>
+
+      {/* <ListaManual/>
       <RenderList/>
 
 
@@ -37,8 +57,8 @@ function App() {
         <Pessoa />
         <Pessoa />
       </div>
-        <List />
-      </div>
+        <List />*/}
+    </div>
   );
 }
 
