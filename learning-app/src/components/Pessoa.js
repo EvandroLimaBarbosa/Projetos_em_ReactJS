@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Pessoa.module.css";
-import PropTypes from "prop-types";
 
 export default function Pessoa({ foto, nome, profissao, idade }) {
   return (

@@ -1,0 +1,21 @@
+.list {
+    display:block;
+    flex-direction: row;
+    background-color: rgb(41, 50, 89);
+}
+
+.item {
+    margin-right: 1em;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.item:visited {
+    display:flex;
+    
+    list-style: none;
+    text-decoration: none;
+    color: white;
+
+}

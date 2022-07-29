@@ -1,17 +1,23 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import {Route, Routes } from 'react-router-dom';
 
+import ListadePessoas from './components/ListadePessoas';
+import Condicional from './components/Condicional';
+import Form from './components/Form';
+import Evento from './components/Evento';
+import List from './components/list';
 
-import Contato from './pages/Contato';
-import Empresa from './pages/Empresa';
 import Home from './pages/Home';
 
 export default function MainRoutes() {
     return (
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/empresa' element={<Empresa/>}/>
-            <Route path='/contato' element={<Contato/>}/>
+            <Route path='/Condicional' element={<Condicional/>}/>
+            <Route path='/form' element={<Form/>}/>
+            <Route path='/Evento' element={<Evento numero={1}/>}/>
+            <Route path='/ListadePessoas' element={<ListadePessoas/>}/>
+            <Route path='/List' element={<List />}/>
         </Routes>
 
     );
