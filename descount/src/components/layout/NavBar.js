@@ -40,6 +40,12 @@ export default function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/OptimizeRoute">Optimize Route</Link>
+        </li>
+        <li>
+          <Link to="/Customers">Customers</Link>
+        </li>
+        <li>
           <Link to="/Company">Company</Link>
         </li>
         <li>
