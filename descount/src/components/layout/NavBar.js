@@ -62,7 +62,7 @@ export default function NavBar() {
   `;
   return (
     <ContainerFundo>
-      <img className="logo" src={Logo} width="160"/>
+      <Link to='/'><img className="logo" src={Logo} width="160"/></Link>
       <ContainerMenu>
         <ul>
           <li>
