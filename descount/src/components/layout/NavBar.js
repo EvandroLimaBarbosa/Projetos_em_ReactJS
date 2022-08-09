@@ -13,6 +13,7 @@ export default function NavBar() {
 
     display: flex;
     align-items: center;
+    margin-right: 1em;
     flex-wrap: nowrap;
     justify-content: right;
     align-content: center;
@@ -41,7 +42,8 @@ export default function NavBar() {
       }
     }
     img {
-      margin: 1em;
+      margin: .2em;
+      margin-left: 1em;
     }
   `;
 
@@ -49,6 +51,7 @@ export default function NavBar() {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width:100%;
     height: 5em;
     margin: 0;
     padding: 1em;
@@ -56,13 +59,12 @@ export default function NavBar() {
     min-height: 1em;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     .logo {
-      margin-left: 0em;
-      margin-right: 1em;
+      margin: .5em 1em 0em 0em;
     }
   `;
   return (
     <ContainerFundo>
-      <Link to='/'><img className="logo" src={Logo} width="160"/></Link>
+      <Link to='/'><img className="logo" src={Logo} width="130"/></Link>
       <ContainerMenu>
         <ul>
           <li>
@@ -82,7 +84,7 @@ export default function NavBar() {
           </li>
         </ul>
         <img src={IconeUsuario} width="25" height="25" />
-        <Usuario />
+        <Usuario/>
       </ContainerMenu>
     </ContainerFundo>
   );

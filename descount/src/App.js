@@ -7,10 +7,11 @@ import styled from "styled-components";
 function App() {
   const Body = styled.div`
   margin: 1em;
-  padding: 1em;
+  padding: 15px;
   height: 60em;
   background:white;
-  box-shadow: 2
+  border: 0.01em solid lightgray;
+  box-sizing: border-box;
   `
   return (
     <div className="App">
