@@ -6,10 +6,6 @@ import styled from "styled-components";
 
 function App() {
   const Body = styled.div`
-  /* editar a barra de rolagem */
-    scroll
-
-
     text-align: left;
 
     margin: 1em;
@@ -19,7 +15,9 @@ function App() {
     border: 0.01em solid lightgray;
     box-sizing: border-box;
     border-radius: 0.3em;
-  `;
+  `
+  
+  ;
   return (
     <div className="App">
       <Router>
