@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import IconeUsuario from "../../img/person-icon.png";
 import Logo from "../../img/Logo Transparente Branca 1.png";
-import Usuario from "../Usuario";
+import Usuario from "../functions/Usuario";
 
 export default function NavBar() {
   const ContainerMenu = styled.div`
@@ -61,6 +61,18 @@ export default function NavBar() {
     .logo {
       margin: .5em 1em 0em 0em;
     }
+    .Sair{
+      text-decoration: none;
+      color: #838383;
+      margin: 0.2em;
+      padding: 0.5em;
+      border-radius: 0.3em;
+      font-weight: bold;
+
+      &:hover {
+        background:none;
+    }
+  }
   `;
   return (
     <ContainerFundo>
@@ -68,23 +80,26 @@ export default function NavBar() {
       <ContainerMenu>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/Home">Home</Link>
           </li>
           <li>
-            <Link to="/OptimizeRoute">Optimize Route</Link>
+            <Link to="/Home/OptimizeRoute">Optimize Route</Link>
           </li>
           <li>
-            <Link to="/Customers">Customers</Link>
+            <Link to="/Home/Customers">Customers</Link>
           </li>
           <li>
-            <Link to="/Company">Company</Link>
+            <Link to="/Home/Company">Company</Link>
           </li>
           <li>
-            <Link to="/Contact">Contact</Link>
+            <Link to="/Home/Contact">Contact</Link>
           </li>
         </ul>
         <img src={IconeUsuario} width="25" height="25" />
         <Usuario/>
+        <Link to="/LoginPage">Contact</Link>
+        <a className="Sair" href="/LoginPage">
+        <button type="button">Sair</button></a>
       </ContainerMenu>
     </ContainerFundo>
   );
