@@ -15,12 +15,11 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(email);
-    console.log(password);
+    console.log("submit", { email, password } );
   }
   return (
     <div id="login">
-      <h1 className="title">Sistem Login</h1>
+      <h1 className="title">Fazer Login</h1>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
           <label htmlFor="email">Email</label>
@@ -28,7 +27,7 @@ const LoginPage = () => {
           type="email" 
           name="email" 
           id="email" 
-          value={email} 
+          value={email}
           onChange={(e) => setEmail(e.target.value)}/>
         </div>
         <div className="field">
