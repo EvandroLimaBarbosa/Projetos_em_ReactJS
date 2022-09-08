@@ -1,0 +1,39 @@
+button:hover {
+    background: rgb(66, 66, 66);
+    cursor: pointer;
+}
+
+.container {
+    background: rgb(45, 45, 45);
+    border-radius: 0.2em;
+    width: 20em;
+    margin: 5em auto;
+    padding: 0.07em;
+}
+
+.container_resultado {
+    color: white;
+    display: flex;
+    align-items:flex-end;
+    justify-content: right;
+    padding: 0 .5em .5em .5em;
+    font-size: 3em;
+    font-weight: 400;
+    margin: 0;
+    word-break: break-word;
+}
+
+.botao {
+    display: inline-block;
+}
+
+.container_calculo_aqui {
+    color: rgb(161, 161, 161);
+    display: flex;
+    align-items:flex-end;
+    justify-content: right;
+    padding: .8em 1.3em 0 1.3em;
+    font-size: 1.5em;
+    font-weight: 100;
+    word-break: break-word;
+}

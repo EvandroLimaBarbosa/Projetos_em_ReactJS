@@ -28,30 +28,32 @@ export default function NavBar() {
       padding: 0;
       list-style: none;
     }
-    a {
+    .links > li > a {
       text-decoration: none;
       color: #838383;
       margin: 0.1em;
       padding: 0.5em;
       border-radius: 0.3em;
       font-weight: bold;
+      transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 
       &:hover {
-        color: white;
-        background: #003b95;
+        color:white;
+        box-shadow: 0 0 40px 40px #0055a9 inset;
       }
-    }
+
     img {
-      margin: .2em;
+      margin: 0.2em;
       margin-left: 1em;
     }
+  }
   `;
 
   const ContainerFundo = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width:100%;
+    width: 100%;
     height: 5em;
     margin: 0;
     padding: 1em;
@@ -59,26 +61,65 @@ export default function NavBar() {
     min-height: 1em;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     .logo {
-      margin: .5em 1em 0em 0em;
+      margin: 0.5em 1em 0em 0em;
     }
-    .Sair{
+    .Sair:hover {
+      background: none;
+    }
+    .botaoSair {
+      background-color: transparent;
+      border: 2px solid #e74c3c;
+      border-radius: 0;
+      color: #e74c3c;
+      font-size: 0.8rem;
+      font-weight: 400;
+      line-height: 1;
+      margin: 20px;
+      padding: 1em 2em;
       text-decoration: none;
-      color: #838383;
-      margin: 0.2em;
-      padding: 0.5em;
-      border-radius: 0.3em;
-      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      font-family:sans-serif;
+      font-weight: 700;
+
+      border-color: #8e44ad;
+      color: #8e44ad;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 150ms ease-in-out;
 
       &:hover {
-        background:none;
+        color: #fff;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 100%;
+        background: #8e44ad;
+        z-index: -1;
+        transition: width 200ms ease-in-out;
+      }
+      &:hover {
+        color: #fff;
+      }
+      &:hover:after {
+        width: 110%;
+      }
     }
-  }
   `;
   return (
     <ContainerFundo>
-      <Link to='/'><img className="logo" src={Logo} width="130"/></Link>
+      <Link to="/">
+        <img className="logo" src={Logo} width="130" />
+      </Link>
       <ContainerMenu>
-        <ul>
+        <ul className="links">
           <li>
             <Link to="/Home">Home</Link>
           </li>
@@ -96,10 +137,12 @@ export default function NavBar() {
           </li>
         </ul>
         <img src={IconeUsuario} width="25" height="25" />
-        <Usuario/>
-        <Link to="/LoginPage">Contact</Link>
+        <Usuario />
         <a className="Sair" href="/LoginPage">
-        <button type="button">Sair</button></a>
+          <button className="botaoSair" type="button">
+            Sair
+          </button>
+        </a>
       </ContainerMenu>
     </ContainerFundo>
   );

@@ -1,24 +1,34 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing:border-box;
-  font-family: 'Open sans', sans-serif;
+  box-sizing: border-box;
+  font-family: "Open sans", sans-serif;
 }
 
-html, body, #root {
-  background: #efefef;
-  height: 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #2c3e50;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
 }
 
-::-webkit-scrollbar{
+body {
+  display: flex;
+  justify-content: space-around;
+}
+
+::-webkit-scrollbar {
   background: #efefef;
-  width:.88em;
+  width: 0.88em;
   padding: 1em;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background: #636468;
   border-radius: 1em;
-  box-shadow: inset 0 0 0 .16em #efefef;
+  box-shadow: inset 0 0 0 0.16em #efefef;
   border: solid 0 transparent;
 }

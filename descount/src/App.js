@@ -1,10 +1,10 @@
 import React from 'react'
-import LoginPage from './components/pages/Login/LoginPage'
+import TelaPrincipal from './components/pages/TelaPrincipal'
 
 export default function App() {
   return (
     <div>
-      <LoginPage/>
+      <TelaPrincipal/>
     </div>
   )
 }
